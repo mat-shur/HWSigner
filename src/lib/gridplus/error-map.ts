@@ -71,7 +71,7 @@ export function getGridPlusErrorMessage(error: unknown): string {
     }
   }
 
-  return 'GridPlus Lattice1 NuFi request failed.';
+  return 'NuFi is not available yet. Install and unlock the NuFi extension, then configure a GridPlus Lattice1-backed Solana account before connecting.';
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
