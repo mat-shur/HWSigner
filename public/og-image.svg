@@ -1,0 +1,30 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#050814"/>
+  <rect x="36" y="36" width="1128" height="558" rx="36" fill="#0B1220" stroke="#223047"/>
+  <path d="M110 130C294 70 468 76 608 148C744 218 890 210 1090 112" stroke="url(#solana)" stroke-width="4" opacity="0.55"/>
+  <path d="M112 510C294 434 466 430 620 502C760 568 918 542 1090 462" stroke="url(#solana)" stroke-width="4" opacity="0.38"/>
+  <rect x="96" y="130" width="170" height="170" rx="42" fill="#050814" stroke="url(#solana)" stroke-width="8"/>
+  <rect x="132" y="180" width="98" height="70" rx="22" fill="#111827" stroke="#14F195" stroke-width="7"/>
+  <path d="M160 216H202" stroke="#F8FAFC" stroke-width="10" stroke-linecap="round"/>
+  <path d="M181 195V237" stroke="#F8FAFC" stroke-width="10" stroke-linecap="round"/>
+  <text x="320" y="226" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800">HWSigner</text>
+  <text x="322" y="288" fill="#14F195" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Unified Solana hardware wallet SDK</text>
+  <text x="322" y="346" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="25">One adapter-based API for Ledger, QR, WalletConnect, provider, and React Native hardware-wallet paths.</text>
+  <g font-family="Inter, Arial, sans-serif" font-size="21" font-weight="700">
+    <rect x="322" y="410" width="118" height="42" rx="21" fill="#111827" stroke="#334155"/>
+    <text x="381" y="438" text-anchor="middle" fill="#F8FAFC">Ledger</text>
+    <rect x="456" y="410" width="80" height="42" rx="21" fill="#111827" stroke="#334155"/>
+    <text x="496" y="438" text-anchor="middle" fill="#F8FAFC">QR</text>
+    <rect x="552" y="410" width="184" height="42" rx="21" fill="#111827" stroke="#334155"/>
+    <text x="644" y="438" text-anchor="middle" fill="#F8FAFC">WalletConnect</text>
+    <rect x="752" y="410" width="160" height="42" rx="21" fill="#111827" stroke="#334155"/>
+    <text x="832" y="438" text-anchor="middle" fill="#F8FAFC">React Native</text>
+  </g>
+  <defs>
+    <linearGradient id="solana" x1="96" y1="90" x2="1090" y2="546" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9945FF"/>
+      <stop offset="0.52" stop-color="#14F195"/>
+      <stop offset="1" stop-color="#00D4FF"/>
+    </linearGradient>
+  </defs>
+</svg>
