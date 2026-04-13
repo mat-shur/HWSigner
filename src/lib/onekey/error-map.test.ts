@@ -7,8 +7,8 @@ import {
   TimeoutError,
   UnsupportedOperationError,
   UserRejectedError,
-} from '@/lib/hwsigner/errors';
-import { getOneKeyErrorCode, getOneKeyErrorMessage, mapOneKeyError } from '@/lib/onekey/error-map';
+} from '../hwsigner/errors';
+import { getOneKeyErrorCode, getOneKeyErrorMessage, mapOneKeyError } from './error-map';
 
 describe('OneKey error map', () => {
   it('maps user rejection codes', () => {

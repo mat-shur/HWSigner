@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { createKeystoneAdapter } from '@/lib/keystone/adapter';
+import { UnsupportedOperationError } from '../hwsigner/errors';
+import { createKeystoneAdapter } from './adapter';
 
 describe('Keystone adapter', () => {
   it('exposes the expected capability shape for keystone-qr', () => {

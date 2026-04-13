@@ -5,8 +5,8 @@ import {
   DeviceConnectionError,
   UnsupportedOperationError,
   UserRejectedError,
-} from '@/lib/hwsigner/errors';
-import { getEllipalErrorMessage, mapEllipalError } from '@/lib/ellipal/error-map';
+} from '../hwsigner/errors';
+import { getEllipalErrorMessage, mapEllipalError } from './error-map';
 
 describe('ELLIPAL error mapping', () => {
   it('maps wallet window close into UserRejectedError', () => {

@@ -10,9 +10,10 @@ import {
   UnsupportedOperationError,
   UserRejectedError,
   getErrorMessage,
-} from '@/lib/hwsigner/errors';
-import { bytesToBase64 } from '@/lib/hwsigner/message';
-import { serializeTransactionForLedger } from '@/lib/hwsigner/transactions';
+} from '../hwsigner/errors';
+import { bytesToBase64 } from '../hwsigner/message';
+import { serializeTransactionForLedger } from '../hwsigner/transactions';
+import { getLedgerCapabilities } from '../hwsigner/capabilities';
 import type {
   GetAccountsInput,
   HWSignerAppConfiguration,
@@ -25,8 +26,9 @@ import type {
   SignTransactionInput,
   SignVersionedTransactionInput,
   WalletAdapter,
-} from '@/lib/hwsigner/types';
-import { LedgerRealDeviceClient } from '@/lib/ledger/client';
+} from '../hwsigner/types';
+
+type LedgerRealDeviceClient = import('./client').LedgerRealDeviceClient;
 
 export function createLedgerAdapter(runtime: HWSignerRuntime, onEvent?: HWSignerEventListener): WalletAdapter {
   if (runtime.kind === 'real-device') {
@@ -41,42 +43,65 @@ export function createLedgerAdapter(runtime: HWSignerRuntime, onEvent?: HWSigner
 }
 
 class LedgerRealAdapter implements WalletAdapter {
-  private readonly client: LedgerRealDeviceClient;
+  private client: LedgerRealDeviceClient | null = null;
+  private readonly onEvent?: HWSignerEventListener;
 
   constructor(onEvent?: HWSignerEventListener) {
-    this.client = new LedgerRealDeviceClient(onEvent);
+    this.onEvent = onEvent;
   }
 
-  connect(): Promise<HWSignerConnection> {
-    return this.client.connect();
+  async connect(): Promise<HWSignerConnection> {
+    const client = await this.getClient();
+    return client.connect();
   }
 
-  disconnect(): Promise<void> {
+  async disconnect(): Promise<void> {
+    if (!this.client) {
+      return;
+    }
+
     return this.client.disconnect();
   }
 
   getCapabilities() {
-    return this.client.getCapabilities();
+    return getLedgerCapabilities({
+      kind: 'real-device',
+      transport: 'webhid',
+    });
   }
 
-  getAppConfiguration(): Promise<HWSignerAppConfiguration | null> {
-    return this.client.getAppConfiguration();
+  async getAppConfiguration(): Promise<HWSignerAppConfiguration | null> {
+    const client = await this.getClient();
+    return client.getAppConfiguration();
   }
 
-  getAccounts(input: GetAccountsInput) {
-    return this.client.getAccounts(input);
+  async getAccounts(input: GetAccountsInput) {
+    const client = await this.getClient();
+    return client.getAccounts(input);
   }
 
-  signMessage(input: SignMessageInput): Promise<SignedMessageResult> {
-    return this.client.signMessage(input);
+  async signMessage(input: SignMessageInput): Promise<SignedMessageResult> {
+    const client = await this.getClient();
+    return client.signMessage(input);
   }
 
-  signTransaction(input: SignTransactionInput): Promise<SignedTransactionResult> {
-    return this.client.signTransaction(input);
+  async signTransaction(input: SignTransactionInput): Promise<SignedTransactionResult> {
+    const client = await this.getClient();
+    return client.signTransaction(input);
   }
 
-  signVersionedTransaction(input: SignVersionedTransactionInput): Promise<SignedTransactionResult> {
-    return this.client.signVersionedTransaction(input);
+  async signVersionedTransaction(input: SignVersionedTransactionInput): Promise<SignedTransactionResult> {
+    const client = await this.getClient();
+    return client.signVersionedTransaction(input);
+  }
+
+  private async getClient(): Promise<LedgerRealDeviceClient> {
+    if (!this.client) {
+      const { LedgerRealDeviceClient } = await import('./client');
+      this.client = new LedgerRealDeviceClient(this.onEvent);
+    }
+
+    return this.client;
   }
 }
 

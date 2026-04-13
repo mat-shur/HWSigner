@@ -1,9 +1,9 @@
 import bs58 from 'bs58';
 import { PublicKey } from '@solana/web3.js';
 
-import { AdapterInitializationError, DeviceConnectionError, UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { bytesToBase64, messageToDisplayText, normalizeMessageBytes } from '@/lib/hwsigner/message';
-import { buildSignedLegacyResult, buildSignedVersionedResult } from '@/lib/hwsigner/transactions';
+import { AdapterInitializationError, DeviceConnectionError, UnsupportedOperationError } from '../hwsigner/errors';
+import { bytesToBase64, messageToDisplayText, normalizeMessageBytes } from '../hwsigner/message';
+import { buildSignedLegacyResult, buildSignedVersionedResult } from '../hwsigner/transactions';
 import type {
   GetAccountsInput,
   HWSignerAppConfiguration,
@@ -14,9 +14,9 @@ import type {
   SignedTransactionResult,
   SignTransactionInput,
   SignVersionedTransactionInput,
-} from '@/lib/hwsigner/types';
-import { mapTangemError } from '@/lib/tangem/error-map';
-import type { TangemCardSession, TangemReactNativeSdk } from '@/lib/tangem/types';
+} from '../hwsigner/types';
+import { mapTangemError } from './error-map';
+import type { TangemCardSession, TangemReactNativeSdk } from './types';
 
 export const TANGEM_SOLANA_DERIVATION_PATH = "m/44'/501'/0'/0'";
 

@@ -4,9 +4,9 @@ import {
   type ExecuteDeviceActionReturnType,
 } from '@ledgerhq/device-management-kit';
 
-import { DeviceConnectionError, TimeoutError } from '@/lib/hwsigner/errors';
-import type { HWSignerEventListener } from '@/lib/hwsigner/types';
-import { mapLedgerError } from '@/lib/ledger/error-map';
+import { DeviceConnectionError, TimeoutError } from '../hwsigner/errors';
+import type { HWSignerEventListener } from '../hwsigner/types';
+import { mapLedgerError } from './error-map';
 
 const USER_INTERACTION_MESSAGES: Partial<Record<UserInteractionRequired, string>> = {
   [UserInteractionRequired.AllowSecureConnection]: 'Allow the secure Ledger connection on the device.',

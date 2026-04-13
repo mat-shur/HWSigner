@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { createCoolWalletAdapter } from '@/lib/coolwallet/adapter';
+import { UnsupportedOperationError } from '../hwsigner/errors';
+import { createCoolWalletAdapter } from './adapter';
 
 describe('CoolWallet adapter', () => {
   it('exposes the expected capability shape for web-ble', () => {

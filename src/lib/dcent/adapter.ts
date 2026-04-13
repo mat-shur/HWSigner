@@ -2,9 +2,9 @@ import type {
   HWSignerEventListener,
   HWSignerRuntime,
   WalletAdapter,
-} from '@/lib/hwsigner/types';
-import { UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { DcentWalletConnectClient } from '@/lib/dcent/client';
+} from '../hwsigner/types';
+import { UnsupportedOperationError } from '../hwsigner/errors';
+import { DcentWalletConnectClient } from './client';
 
 export function createDcentAdapter(runtime: HWSignerRuntime, onEvent?: HWSignerEventListener): WalletAdapter {
   if (runtime.kind !== 'dcent-walletconnect') {

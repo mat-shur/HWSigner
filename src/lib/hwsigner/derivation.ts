@@ -1,4 +1,4 @@
-import { InvalidDerivationPathError } from '@/lib/hwsigner/errors';
+import { InvalidDerivationPathError } from './errors';
 
 export const SOLANA_PURPOSE = 44;
 export const SOLANA_COIN_TYPE = 501;

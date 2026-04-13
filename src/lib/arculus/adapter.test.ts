@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { createArculusAdapter } from '@/lib/arculus/adapter';
+import { UnsupportedOperationError } from '../hwsigner/errors';
+import { createArculusAdapter } from './adapter';
 
 describe('Arculus adapter', () => {
   it('exposes the expected capability shape for walletconnect', () => {

@@ -9,7 +9,7 @@ import {
   createPlaygroundVersionedTransaction,
   resolveLedgerTransactionSigningPayload,
   serializeTransactionForLedger,
-} from '@/lib/hwsigner/transactions';
+} from './transactions';
 
 describe('transaction helpers', () => {
   it('serializes a legacy transaction for Ledger signing', () => {

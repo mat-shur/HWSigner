@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest';
 
-import { getLedgerCapabilities } from '@/lib/hwsigner/capabilities';
-import { AdapterInitializationError, UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { resolveSpeculosEnabled } from '@/lib/ledger/env';
-import { validateSpeculosUrl } from '@/lib/ledger/speculos';
+import { getLedgerCapabilities } from '../hwsigner/capabilities';
+import { AdapterInitializationError, UnsupportedOperationError } from '../hwsigner/errors';
+import { resolveSpeculosEnabled } from './env';
+import { validateSpeculosUrl } from './speculos';
 
 describe('Speculos helpers', () => {
   it('returns an honest capability shape for the emulator runtime', () => {

@@ -2,9 +2,9 @@ import type {
   HWSignerEventListener,
   HWSignerRuntime,
   WalletAdapter,
-} from '@/lib/hwsigner/types';
-import { UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { ArculusWalletConnectClient } from '@/lib/arculus/client';
+} from '../hwsigner/types';
+import { UnsupportedOperationError } from '../hwsigner/errors';
+import { ArculusWalletConnectClient } from './client';
 
 export function createArculusAdapter(runtime: HWSignerRuntime, onEvent?: HWSignerEventListener): WalletAdapter {
   if (runtime.kind !== 'arculus-walletconnect') {

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { createOneKeyAdapter } from '@/lib/onekey/adapter';
+import { UnsupportedOperationError } from '../hwsigner/errors';
+import { createOneKeyAdapter } from './adapter';
 
 describe('OneKey adapter', () => {
   it('exposes the expected capability shape for onekey-webusb', () => {

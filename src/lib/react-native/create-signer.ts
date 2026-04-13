@@ -1,9 +1,9 @@
-import { UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import type { CreateHWSignerOptions, WalletAdapter } from '@/lib/hwsigner/types';
-import { createTangemReactNativeAdapter } from '@/lib/tangem/react-native-adapter';
-import { createReactNativeKeystoneQrAdapter } from '@/lib/react-native/keystone-qr-adapter';
-import { createReactNativeWalletConnectAdapter } from '@/lib/react-native/walletconnect-adapter';
-import { getReactNativeWalletSupport } from '@/lib/react-native/support';
+import { UnsupportedOperationError } from '../hwsigner/errors';
+import type { CreateHWSignerOptions, WalletAdapter } from '../hwsigner/types';
+import { createTangemReactNativeAdapter } from '../tangem/react-native-adapter';
+import { createReactNativeKeystoneQrAdapter } from './keystone-qr-adapter';
+import { createReactNativeWalletConnectAdapter } from './walletconnect-adapter';
+import { getReactNativeWalletSupport } from './support';
 
 export function createReactNativeHWSigner(options: CreateHWSignerOptions): WalletAdapter {
   if (options.runtime.kind === 'react-native-keystone-qr') {

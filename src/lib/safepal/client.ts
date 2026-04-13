@@ -9,9 +9,9 @@ import {
   DeviceConnectionError,
   DeviceNotFoundError,
   UnsupportedOperationError,
-} from '@/lib/hwsigner/errors';
-import { bytesToBase64, messageToDisplayText, normalizeMessageBytes } from '@/lib/hwsigner/message';
-import { buildSignedLegacyResult } from '@/lib/hwsigner/transactions';
+} from '../hwsigner/errors';
+import { bytesToBase64, messageToDisplayText, normalizeMessageBytes } from '../hwsigner/message';
+import { buildSignedLegacyResult } from '../hwsigner/transactions';
 import type {
   GetAccountsInput,
   HWSignerAppConfiguration,
@@ -22,8 +22,8 @@ import type {
   SignedTransactionResult,
   SignTransactionInput,
   SignVersionedTransactionInput,
-} from '@/lib/hwsigner/types';
-import { getSafePalErrorMessage, mapSafePalError } from '@/lib/safepal/error-map';
+} from '../hwsigner/types';
+import { getSafePalErrorMessage, mapSafePalError } from './error-map';
 
 const SAFEPAL_ACCOUNT_PATH = 'safepal://selected-account';
 

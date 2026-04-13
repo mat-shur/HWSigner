@@ -3,9 +3,9 @@
 import bs58 from 'bs58';
 import type { Transaction, VersionedTransaction } from '@solana/web3.js';
 
-import { DeviceConnectionError, UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { bytesToBase64, messageToDisplayText, normalizeMessageBytes } from '@/lib/hwsigner/message';
-import { buildSignedLegacyResult, buildSignedVersionedResult } from '@/lib/hwsigner/transactions';
+import { DeviceConnectionError, UnsupportedOperationError } from '../hwsigner/errors';
+import { bytesToBase64, messageToDisplayText, normalizeMessageBytes } from '../hwsigner/message';
+import { buildSignedLegacyResult, buildSignedVersionedResult } from '../hwsigner/transactions';
 import type {
   GetAccountsInput,
   HWSignerAppConfiguration,
@@ -16,8 +16,8 @@ import type {
   SignedTransactionResult,
   SignTransactionInput,
   SignVersionedTransactionInput,
-} from '@/lib/hwsigner/types';
-import { mapGridPlusError } from '@/lib/gridplus/error-map';
+} from '../hwsigner/types';
+import { mapGridPlusError } from './error-map';
 
 const GRIDPLUS_ACCOUNT_PATH = 'gridplus-lattice://nufi-selected-account';
 

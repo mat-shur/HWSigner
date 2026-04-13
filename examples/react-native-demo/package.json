@@ -1,0 +1,22 @@
+{
+  "name": "hwsigner-react-native-demo",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.98.4",
+    "expo": "^53.0.0",
+    "hwsigner": "file:../..",
+    "react": "^18.3.1",
+    "react-native": "^0.76.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.23",
+    "typescript": "^5.8.3"
+  }
+}

@@ -1,10 +1,10 @@
-import { UnsupportedOperationError } from '@/lib/hwsigner/errors';
+import { UnsupportedOperationError } from '../hwsigner/errors';
 import type {
   HWSignerEventListener,
   HWSignerRuntime,
   WalletAdapter,
-} from '@/lib/hwsigner/types';
-import { TangemReactNativeNfcClient } from '@/lib/tangem/client';
+} from '../hwsigner/types';
+import { TangemReactNativeNfcClient } from './client';
 
 export function createTangemReactNativeAdapter(runtime: HWSignerRuntime, onEvent?: HWSignerEventListener): WalletAdapter {
   if (runtime.kind !== 'tangem-react-native-nfc') {

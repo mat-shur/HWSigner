@@ -17,8 +17,8 @@ import {
   TimeoutError,
   UnsupportedOperationError,
   UserRejectedError,
-} from '@/lib/hwsigner/errors';
-import { getCypherockErrorMessage, mapCypherockError } from '@/lib/cypherock/error-map';
+} from '../hwsigner/errors';
+import { getCypherockErrorMessage, mapCypherockError } from './error-map';
 
 describe('Cypherock error mapping', () => {
   it('maps user rejection into UserRejectedError', () => {

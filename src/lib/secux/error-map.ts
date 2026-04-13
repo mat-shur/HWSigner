@@ -8,7 +8,7 @@ import {
   TimeoutError,
   UnsupportedOperationError,
   UserRejectedError,
-} from '@/lib/hwsigner/errors';
+} from '../hwsigner/errors';
 
 const SECUX_STATUS_USER_CANCEL = 36865;
 const SECUX_STATUS_DATA_ERROR = 20481;

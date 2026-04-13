@@ -5,9 +5,9 @@ import { Transaction, VersionedTransaction } from '@solana/web3.js';
 import type { Cluster } from '@solana/web3.js';
 import type Solflare from '@solflare-wallet/sdk';
 
-import { DeviceConnectionError, UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { bytesToBase64, messageToDisplayText, normalizeMessageBytes } from '@/lib/hwsigner/message';
-import { buildSignedLegacyResult, buildSignedVersionedResult } from '@/lib/hwsigner/transactions';
+import { DeviceConnectionError, UnsupportedOperationError } from '../hwsigner/errors';
+import { bytesToBase64, messageToDisplayText, normalizeMessageBytes } from '../hwsigner/message';
+import { buildSignedLegacyResult, buildSignedVersionedResult } from '../hwsigner/transactions';
 import type {
   GetAccountsInput,
   HWSignerAppConfiguration,
@@ -18,8 +18,8 @@ import type {
   SignedTransactionResult,
   SignTransactionInput,
   SignVersionedTransactionInput,
-} from '@/lib/hwsigner/types';
-import { mapSolflareShieldError } from '@/lib/solflare-shield/error-map';
+} from '../hwsigner/types';
+import { mapSolflareShieldError } from './error-map';
 
 const SOLFLARE_SHIELD_ACCOUNT_PATH = 'solflare-shield://selected-account';
 

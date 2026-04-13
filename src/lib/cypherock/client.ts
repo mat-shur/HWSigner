@@ -9,17 +9,17 @@ import {
   resolveDerivationPath,
   SOLANA_COIN_TYPE,
   SOLANA_PURPOSE,
-} from '@/lib/hwsigner/derivation';
+} from '../hwsigner/derivation';
 import {
   DeviceConnectionError,
   DeviceNotFoundError,
   InvalidDerivationPathError,
   UnsupportedOperationError,
   UserRejectedError,
-} from '@/lib/hwsigner/errors';
+} from '../hwsigner/errors';
 import {
   buildSignedLegacyResult,
-} from '@/lib/hwsigner/transactions';
+} from '../hwsigner/transactions';
 import type {
   GetAccountsInput,
   HWSignerAppConfiguration,
@@ -30,8 +30,8 @@ import type {
   SignedTransactionResult,
   SignTransactionInput,
   SignVersionedTransactionInput,
-} from '@/lib/hwsigner/types';
-import { getCypherockErrorMessage, mapCypherockError } from '@/lib/cypherock/error-map';
+} from '../hwsigner/types';
+import { getCypherockErrorMessage, mapCypherockError } from './error-map';
 
 type CypherockUsbModule = typeof import('@cypherock/sdk-hw-webusb');
 type CypherockManagerModule = typeof import('@cypherock/sdk-app-manager');

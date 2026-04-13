@@ -1,12 +1,12 @@
 import bs58 from 'bs58';
 import { PublicKey, Transaction, VersionedTransaction } from '@solana/web3.js';
 
-import { DeviceConnectionError, UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { bytesToBase64, messageToDisplayText, normalizeMessageBytes } from '@/lib/hwsigner/message';
+import { DeviceConnectionError, UnsupportedOperationError } from '../hwsigner/errors';
+import { bytesToBase64, messageToDisplayText, normalizeMessageBytes } from '../hwsigner/message';
 import {
   buildSignedLegacyResult,
   buildSignedVersionedResult,
-} from '@/lib/hwsigner/transactions';
+} from '../hwsigner/transactions';
 import type {
   GetAccountsInput,
   HWSignerAppConfiguration,
@@ -19,8 +19,8 @@ import type {
   SignedTransactionResult,
   SignTransactionInput,
   SignVersionedTransactionInput,
-} from '@/lib/hwsigner/types';
-import type { ReactNativeSolanaWalletClient, ReactNativeWalletSignature } from '@/lib/react-native/walletconnect-types';
+} from '../hwsigner/types';
+import type { ReactNativeSolanaWalletClient, ReactNativeWalletSignature } from './walletconnect-types';
 
 type ReactNativeInjectedSolanaRuntime =
   | Extract<HWSignerRuntime, { kind: 'react-native-walletconnect' }>

@@ -8,8 +8,8 @@ import {
   TimeoutError,
   UnsupportedOperationError,
   UserRejectedError,
-} from '@/lib/hwsigner/errors';
-import { mapLedgerError } from '@/lib/ledger/error-map';
+} from '../hwsigner/errors';
+import { mapLedgerError } from './error-map';
 
 describe('Ledger error mapping', () => {
   it('maps missing devices into DeviceNotFoundError', () => {

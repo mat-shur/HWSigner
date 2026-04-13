@@ -1,4 +1,4 @@
-import type { HWWalletId } from '@/lib/hwsigner/types';
+import type { HWWalletId } from '../hwsigner/types';
 
 export type ReactNativeWalletSupportStatus = 'implemented' | 'adapter-ready' | 'planned' | 'web-only';
 

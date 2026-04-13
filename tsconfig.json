@@ -24,6 +24,5 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules", "hwsigner-playground-86-main"]
+  "exclude": ["node_modules", "examples", "hwsigner-playground-86-main"]
 }
-

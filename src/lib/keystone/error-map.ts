@@ -3,7 +3,7 @@ import {
   DeviceNotFoundError,
   UnsupportedOperationError,
   UserRejectedError,
-} from '@/lib/hwsigner/errors';
+} from '../hwsigner/errors';
 
 export function mapKeystoneError(error: unknown): Error {
   const message = getKeystoneErrorMessage(error);

@@ -1,9 +1,9 @@
 import { PublicKey } from '@solana/web3.js';
 import { describe, expect, it, vi } from 'vitest';
 
-import { UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { createReactNativeHWSigner } from '@/lib/react-native/create-signer';
-import { getReactNativeWalletSupport, reactNativeWalletSupport } from '@/lib/react-native/support';
+import { UnsupportedOperationError } from '../hwsigner/errors';
+import { createReactNativeHWSigner } from './create-signer';
+import { getReactNativeWalletSupport, reactNativeWalletSupport } from './support';
 
 const reactNativePublicKey = new PublicKey(Uint8Array.from(Array.from({ length: 32 }, (_, index) => index + 1)));
 

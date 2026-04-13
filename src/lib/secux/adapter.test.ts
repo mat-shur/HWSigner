@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { createSecuXAdapter } from '@/lib/secux/adapter';
+import { UnsupportedOperationError } from '../hwsigner/errors';
+import { createSecuXAdapter } from './adapter';
 
 describe('SecuX adapter', () => {
   it('exposes the expected capability shape for webusb', () => {

@@ -5,8 +5,8 @@ import {
   DeviceConnectionError,
   UnsupportedOperationError,
   UserRejectedError,
-} from '@/lib/hwsigner/errors';
-import { getDcentErrorMessage, mapDcentError } from '@/lib/dcent/error-map';
+} from '../hwsigner/errors';
+import { getDcentErrorMessage, mapDcentError } from './error-map';
 
 describe("D'CENT error mapping", () => {
   it('maps wallet window close into UserRejectedError', () => {

@@ -2,9 +2,9 @@ import type {
   HWSignerEventListener,
   HWSignerRuntime,
   WalletAdapter,
-} from '@/lib/hwsigner/types';
-import { UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { BcVaultWalletConnectClient } from '@/lib/bc-vault/client';
+} from '../hwsigner/types';
+import { UnsupportedOperationError } from '../hwsigner/errors';
+import { BcVaultWalletConnectClient } from './client';
 
 export function createBcVaultAdapter(runtime: HWSignerRuntime, onEvent?: HWSignerEventListener): WalletAdapter {
   if (runtime.kind !== 'bc-vault-walletconnect') {

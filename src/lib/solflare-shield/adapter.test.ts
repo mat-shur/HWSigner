@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
 
-import { UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { createSolflareShieldAdapter } from '@/lib/solflare-shield/adapter';
-import { getSolflareShieldErrorMessage, mapSolflareShieldError } from '@/lib/solflare-shield/error-map';
+import { UnsupportedOperationError } from '../hwsigner/errors';
+import { createSolflareShieldAdapter } from './adapter';
+import { getSolflareShieldErrorMessage, mapSolflareShieldError } from './error-map';
 
 describe('Solflare Shield adapter', () => {
   it('exposes the expected capability shape for the Solflare SDK runtime', () => {

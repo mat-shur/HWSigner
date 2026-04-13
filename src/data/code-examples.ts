@@ -126,16 +126,16 @@ export const buildLedgerCodeExamples = buildWalletCodeExamples;
 function getCreateSignerImports(runtime: HWSignerRuntime | null): string[] {
   if (runtime?.kind === 'tangem-react-native-nfc') {
     return [
-      "import { createReactNativeHWSigner } from '@/lib/react-native';",
+      "import { createReactNativeHWSigner } from 'hwsigner/react-native';",
       "import RNTangemSdk from 'tangem-sdk-react-native';",
     ];
   }
 
   if (runtime?.kind === 'react-native-walletconnect' || runtime?.kind === 'react-native-keystone-qr') {
-    return ["import { createReactNativeHWSigner, type ReactNativeSolanaWalletClient } from '@/lib/react-native';"];
+    return ["import { createReactNativeHWSigner, type ReactNativeSolanaWalletClient } from 'hwsigner/react-native';"];
   }
 
-  return ["import { createHWSigner } from '@/lib/hwsigner/create-signer';"];
+  return ["import { createHWSigner } from 'hwsigner';"];
 }
 
 function getCreateSignerFunction(runtime: HWSignerRuntime | null): string {

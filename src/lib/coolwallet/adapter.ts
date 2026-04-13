@@ -2,9 +2,9 @@ import type {
   HWSignerEventListener,
   HWSignerRuntime,
   WalletAdapter,
-} from '@/lib/hwsigner/types';
-import { UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { CoolWalletWebBleClient } from '@/lib/coolwallet/client';
+} from '../hwsigner/types';
+import { UnsupportedOperationError } from '../hwsigner/errors';
+import { CoolWalletWebBleClient } from './client';
 
 export function createCoolWalletAdapter(runtime: HWSignerRuntime, onEvent?: HWSignerEventListener): WalletAdapter {
   if (runtime.kind !== 'coolwallet-web-ble') {

@@ -4,17 +4,17 @@ import bs58 from 'bs58';
 
 import type { PopupClosedMessage } from '@trezor/connect-web';
 
-import { getSolanaDerivationPaths, resolveDerivationPath } from '@/lib/hwsigner/derivation';
+import { getSolanaDerivationPaths, resolveDerivationPath } from '../hwsigner/derivation';
 import {
   DeviceConnectionError,
   UnsupportedOperationError,
-} from '@/lib/hwsigner/errors';
+} from '../hwsigner/errors';
 import {
   buildSignedLegacyResult,
   buildSignedVersionedResult,
   resolveLedgerTransactionSigningPayload,
   serializeTransactionForLedger,
-} from '@/lib/hwsigner/transactions';
+} from '../hwsigner/transactions';
 import type {
   GetAccountsInput,
   HWSignerAppConfiguration,
@@ -25,8 +25,8 @@ import type {
   SignedTransactionResult,
   SignTransactionInput,
   SignVersionedTransactionInput,
-} from '@/lib/hwsigner/types';
-import { mapTrezorError, getTrezorErrorMessage } from '@/lib/trezor/error-map';
+} from '../hwsigner/types';
+import { mapTrezorError, getTrezorErrorMessage } from './error-map';
 
 const TREZOR_DEFAULT_PATH = `m/44'/501'/0'/0'`;
 

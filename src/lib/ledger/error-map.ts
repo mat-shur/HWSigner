@@ -21,7 +21,7 @@ import {
   UserRejectedError,
   getErrorCode,
   getErrorMessage,
-} from '@/lib/hwsigner/errors';
+} from '../hwsigner/errors';
 
 const USER_REJECTED_CODES = new Set([6982]);
 

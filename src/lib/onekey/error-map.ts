@@ -5,7 +5,7 @@ import {
   TimeoutError,
   UnsupportedOperationError,
   UserRejectedError,
-} from '@/lib/hwsigner/errors';
+} from '../hwsigner/errors';
 
 const USER_REJECTED_CODES = new Set(['109', '801', '802', '803', '822']);
 const DEVICE_NOT_FOUND_CODES = new Set(['104', '105', '602', '901', '902']);

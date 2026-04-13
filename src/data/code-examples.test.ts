@@ -90,7 +90,7 @@ describe('buildWalletCodeExamples', () => {
 
     const setup = examples.find((example) => example.id === 'setup');
 
-    expect(setup?.code).toContain("import { createReactNativeHWSigner } from '@/lib/react-native';");
+    expect(setup?.code).toContain("import { createReactNativeHWSigner } from 'hwsigner/react-native';");
     expect(setup?.code).toContain("import RNTangemSdk from 'tangem-sdk-react-native';");
     expect(setup?.code).toContain('createReactNativeHWSigner({');
     expect(setup?.code).toContain('sdk: RNTangemSdk');
@@ -287,7 +287,7 @@ describe('buildWalletCodeExamples', () => {
 
     const setup = examples.find((example) => example.id === 'setup');
 
-    expect(setup?.code).toContain("from '@/lib/react-native'");
+    expect(setup?.code).toContain("from 'hwsigner/react-native'");
     expect(setup?.code).toContain('createReactNativeHWSigner({');
     expect(setup?.code).toContain('declare const wallet: ReactNativeSolanaWalletClient;');
     expect(setup?.code).toContain("kind: 'react-native-walletconnect'");
@@ -319,7 +319,7 @@ describe('buildWalletCodeExamples', () => {
 
     const setup = examples.find((example) => example.id === 'setup');
 
-    expect(setup?.code).toContain("from '@/lib/react-native'");
+    expect(setup?.code).toContain("from 'hwsigner/react-native'");
     expect(setup?.code).toContain('createReactNativeHWSigner({');
     expect(setup?.code).toContain('React Native Keystone QR scanner / UR flow');
     expect(setup?.code).toContain("kind: 'react-native-keystone-qr'");

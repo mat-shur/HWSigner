@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { createTrezorAdapter } from '@/lib/trezor/adapter';
+import { UnsupportedOperationError } from '../hwsigner/errors';
+import { createTrezorAdapter } from './adapter';
 
 describe('Trezor adapter', () => {
   it('exposes the expected capability shape for trezor-connect', () => {

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { createKeyPalAdapter } from '@/lib/keypal/adapter';
+import { UnsupportedOperationError } from '../hwsigner/errors';
+import { createKeyPalAdapter } from './adapter';
 
 describe('KeyPal adapter', () => {
   it('exposes the expected capability shape for the TokenPocket provider runtime', () => {

@@ -5,8 +5,8 @@ import {
   DeviceNotFoundError,
   UnsupportedOperationError,
   UserRejectedError,
-} from '@/lib/hwsigner/errors';
-import { getKeystoneErrorMessage, mapKeystoneError } from '@/lib/keystone/error-map';
+} from '../hwsigner/errors';
+import { getKeystoneErrorMessage, mapKeystoneError } from './error-map';
 
 describe('Keystone error map', () => {
   it('maps user rejection strings', () => {

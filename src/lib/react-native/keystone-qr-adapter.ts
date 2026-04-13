@@ -1,11 +1,11 @@
-import { UnsupportedOperationError } from '@/lib/hwsigner/errors';
+import { UnsupportedOperationError } from '../hwsigner/errors';
 import type {
   HWSignerEventListener,
   HWSignerRuntime,
   HWWalletId,
   WalletAdapter,
-} from '@/lib/hwsigner/types';
-import { ReactNativeInjectedSolanaClient } from '@/lib/react-native/walletconnect-client';
+} from '../hwsigner/types';
+import { ReactNativeInjectedSolanaClient } from './walletconnect-client';
 
 export function createReactNativeKeystoneQrAdapter(
   walletId: HWWalletId,

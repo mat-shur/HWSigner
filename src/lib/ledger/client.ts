@@ -5,20 +5,20 @@ import { SignMessageVersion, SignerSolanaBuilder } from '@ledgerhq/device-signer
 import { webHidIdentifier, webHidTransportFactory } from '@ledgerhq/device-transport-kit-web-hid';
 import { firstValueFrom, timeout } from 'rxjs';
 
-import { getLedgerCapabilities } from '@/lib/hwsigner/capabilities';
-import { getSolanaDerivationPaths, resolveDerivationPath, toLedgerDerivationPath } from '@/lib/hwsigner/derivation';
+import { getLedgerCapabilities } from '../hwsigner/capabilities';
+import { getSolanaDerivationPaths, resolveDerivationPath, toLedgerDerivationPath } from '../hwsigner/derivation';
 import {
   AdapterInitializationError,
   DeviceConnectionError,
   UnsupportedOperationError,
-} from '@/lib/hwsigner/errors';
-import { bytesToBase64, messageToDisplayText, normalizeMessageBytes } from '@/lib/hwsigner/message';
+} from '../hwsigner/errors';
+import { bytesToBase64, messageToDisplayText, normalizeMessageBytes } from '../hwsigner/message';
 import {
   buildSignedLegacyResult,
   buildSignedVersionedResult,
   resolveLedgerTransactionSigningPayload,
   serializeTransactionForLedger,
-} from '@/lib/hwsigner/transactions';
+} from '../hwsigner/transactions';
 import type {
   GetAccountsInput,
   HWSignerAccount,
@@ -30,8 +30,8 @@ import type {
   SignedTransactionResult,
   SignTransactionInput,
   SignVersionedTransactionInput,
-} from '@/lib/hwsigner/types';
-import { resolveLedgerDeviceAction } from '@/lib/ledger/action';
+} from '../hwsigner/types';
+import { resolveLedgerDeviceAction } from './action';
 
 const WEBHID_DISCOVERY_TIMEOUT_MS = 20_000;
 

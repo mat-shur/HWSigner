@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { createBcVaultAdapter } from '@/lib/bc-vault/adapter';
+import { UnsupportedOperationError } from '../hwsigner/errors';
+import { createBcVaultAdapter } from './adapter';
 
 describe('BC Vault adapter', () => {
   it('exposes the expected capability shape for walletconnect', () => {

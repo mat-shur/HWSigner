@@ -3,20 +3,20 @@
 import bs58 from 'bs58';
 import type { Features, KnownDevice, SearchDevice } from '@onekeyfe/hd-core';
 
-import { getSolanaDerivationPaths, resolveDerivationPath } from '@/lib/hwsigner/derivation';
+import { getSolanaDerivationPaths, resolveDerivationPath } from '../hwsigner/derivation';
 import {
   AdapterInitializationError,
   DeviceConnectionError,
   DeviceNotFoundError,
   UnsupportedOperationError,
-} from '@/lib/hwsigner/errors';
-import { bytesToBase64, messageToDisplayText, normalizeMessageBytes } from '@/lib/hwsigner/message';
+} from '../hwsigner/errors';
+import { bytesToBase64, messageToDisplayText, normalizeMessageBytes } from '../hwsigner/message';
 import {
   buildSignedLegacyResult,
   buildSignedVersionedResult,
   resolveLedgerTransactionSigningPayload,
   serializeTransactionForLedger,
-} from '@/lib/hwsigner/transactions';
+} from '../hwsigner/transactions';
 import type {
   GetAccountsInput,
   HWSignerAppConfiguration,
@@ -27,8 +27,8 @@ import type {
   SignedTransactionResult,
   SignTransactionInput,
   SignVersionedTransactionInput,
-} from '@/lib/hwsigner/types';
-import { getOneKeyErrorMessage, mapOneKeyError } from '@/lib/onekey/error-map';
+} from '../hwsigner/types';
+import { getOneKeyErrorMessage, mapOneKeyError } from './error-map';
 
 const ONEKEY_DEFAULT_PATH = `m/44'/501'/0'/0'`;
 

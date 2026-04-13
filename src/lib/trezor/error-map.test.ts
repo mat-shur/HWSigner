@@ -6,8 +6,8 @@ import {
   DeviceNotFoundError,
   UnsupportedOperationError,
   UserRejectedError,
-} from '@/lib/hwsigner/errors';
-import { getTrezorErrorMessage, mapTrezorError } from '@/lib/trezor/error-map';
+} from '../hwsigner/errors';
+import { getTrezorErrorMessage, mapTrezorError } from './error-map';
 
 describe('Trezor error mapping', () => {
   it('maps user cancellations into UserRejectedError', () => {

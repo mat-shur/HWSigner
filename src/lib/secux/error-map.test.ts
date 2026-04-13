@@ -5,8 +5,8 @@ import {
   InvalidTransactionError,
   UnsupportedOperationError,
   UserRejectedError,
-} from '@/lib/hwsigner/errors';
-import { getSecuXErrorMessage, mapSecuXError } from '@/lib/secux/error-map';
+} from '../hwsigner/errors';
+import { getSecuXErrorMessage, mapSecuXError } from './error-map';
 
 describe('SecuX error mapping', () => {
   it('maps device user cancellation into UserRejectedError', () => {

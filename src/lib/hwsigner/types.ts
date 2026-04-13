@@ -1,6 +1,6 @@
 import type { Transaction, VersionedTransaction } from '@solana/web3.js';
-import type { TangemReactNativeSdk } from '@/lib/tangem/types';
-import type { ReactNativeSolanaWalletClient } from '@/lib/react-native/walletconnect-types';
+import type { TangemReactNativeSdk } from '../tangem/types';
+import type { ReactNativeSolanaWalletClient } from '../react-native/walletconnect-types';
 
 export type HWWalletId =
   | 'ledger'

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { createSafePalAdapter } from '@/lib/safepal/adapter';
+import { UnsupportedOperationError } from '../hwsigner/errors';
+import { createSafePalAdapter } from './adapter';
 
 describe('SafePal adapter', () => {
   it('exposes the expected capability shape for the injected provider runtime', () => {

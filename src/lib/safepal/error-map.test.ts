@@ -6,8 +6,8 @@ import {
   DeviceNotFoundError,
   UnsupportedOperationError,
   UserRejectedError,
-} from '@/lib/hwsigner/errors';
-import { getSafePalErrorMessage, mapSafePalError } from '@/lib/safepal/error-map';
+} from '../hwsigner/errors';
+import { getSafePalErrorMessage, mapSafePalError } from './error-map';
 
 describe('SafePal error map', () => {
   it('maps user rejection strings', () => {

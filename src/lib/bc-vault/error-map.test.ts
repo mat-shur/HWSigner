@@ -5,8 +5,8 @@ import {
   DeviceConnectionError,
   UnsupportedOperationError,
   UserRejectedError,
-} from '@/lib/hwsigner/errors';
-import { getBcVaultErrorMessage, mapBcVaultError } from '@/lib/bc-vault/error-map';
+} from '../hwsigner/errors';
+import { getBcVaultErrorMessage, mapBcVaultError } from './error-map';
 
 describe('BC Vault error mapping', () => {
   it('maps wallet window close into UserRejectedError', () => {

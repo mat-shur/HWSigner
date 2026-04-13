@@ -4,12 +4,12 @@ import bs58 from 'bs58';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import type { Transaction, VersionedTransaction } from '@solana/web3.js';
 
-import { AdapterInitializationError, DeviceConnectionError, UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { bytesToBase64, messageToDisplayText, normalizeMessageBytes } from '@/lib/hwsigner/message';
+import { AdapterInitializationError, DeviceConnectionError, UnsupportedOperationError } from '../hwsigner/errors';
+import { bytesToBase64, messageToDisplayText, normalizeMessageBytes } from '../hwsigner/message';
 import {
   buildSignedLegacyResult,
   buildSignedVersionedResult,
-} from '@/lib/hwsigner/transactions';
+} from '../hwsigner/transactions';
 import type {
   GetAccountsInput,
   HWSignerAppConfiguration,
@@ -20,8 +20,8 @@ import type {
   SignedTransactionResult,
   SignTransactionInput,
   SignVersionedTransactionInput,
-} from '@/lib/hwsigner/types';
-import { getTangemErrorMessage, mapTangemError } from '@/lib/tangem/error-map';
+} from '../hwsigner/types';
+import { getTangemErrorMessage, mapTangemError } from './error-map';
 
 const TANGEM_WALLETCONNECT_ACCOUNT_PATH = 'tangem://walletconnect-selected-account';
 

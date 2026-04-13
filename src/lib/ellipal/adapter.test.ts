@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { createEllipalAdapter } from '@/lib/ellipal/adapter';
+import { UnsupportedOperationError } from '../hwsigner/errors';
+import { createEllipalAdapter } from './adapter';
 
 describe('ELLIPAL adapter', () => {
   it('exposes the expected capability shape for walletconnect qr', () => {

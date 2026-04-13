@@ -4,7 +4,7 @@ import {
   DeviceNotFoundError,
   UnsupportedOperationError,
   UserRejectedError,
-} from '@/lib/hwsigner/errors';
+} from '../hwsigner/errors';
 
 export function mapTrezorError(error: unknown): Error {
   const message = getTrezorErrorMessage(error);

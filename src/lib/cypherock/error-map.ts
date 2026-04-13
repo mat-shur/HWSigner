@@ -19,7 +19,7 @@ import {
   TimeoutError,
   UnsupportedOperationError,
   UserRejectedError,
-} from '@/lib/hwsigner/errors';
+} from '../hwsigner/errors';
 
 export function mapCypherockError(error: unknown): HWSignerError {
   if (error instanceof HWSignerError) {

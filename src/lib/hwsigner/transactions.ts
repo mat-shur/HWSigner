@@ -10,14 +10,14 @@ import {
 } from '@solana/web3.js';
 import bs58 from 'bs58';
 
-import { InvalidTransactionError } from '@/lib/hwsigner/errors';
-import { bytesToBase64 } from '@/lib/hwsigner/message';
+import { InvalidTransactionError } from './errors';
+import { bytesToBase64 } from './message';
 import type {
   SignedTransactionResult,
   TransactionSummary,
   TransactionSummaryInstruction,
   TransactionSigningPayloadMode,
-} from '@/lib/hwsigner/types';
+} from './types';
 
 export const DEFAULT_PLAYGROUND_RECIPIENT = 'DRpbCBMxVnDK7maPMoGQfFiRLNGhFM1M7J9sX9g3BJ2j';
 export const DEFAULT_PLAYGROUND_LAMPORTS = 1_500_000;

@@ -6,7 +6,7 @@ import {
   HWSignerError,
   UnsupportedOperationError,
   UserRejectedError,
-} from '@/lib/hwsigner/errors';
+} from '../hwsigner/errors';
 
 export function mapArculusError(error: unknown): HWSignerError {
   if (error instanceof HWSignerError) {

@@ -5,8 +5,8 @@ import {
   DeviceConnectionError,
   UnsupportedOperationError,
   UserRejectedError,
-} from '@/lib/hwsigner/errors';
-import { getArculusErrorMessage, mapArculusError } from '@/lib/arculus/error-map';
+} from '../hwsigner/errors';
+import { getArculusErrorMessage, mapArculusError } from './error-map';
 
 describe('Arculus error mapping', () => {
   it('maps wallet window close into UserRejectedError', () => {

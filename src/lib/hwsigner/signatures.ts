@@ -2,7 +2,7 @@ import { createPublicKey, verify } from 'node:crypto';
 
 import bs58 from 'bs58';
 
-import { normalizeMessageBytes } from '@/lib/hwsigner/message';
+import { normalizeMessageBytes } from './message';
 
 const ED25519_SPKI_PREFIX = Buffer.from('302a300506032b6570032100', 'hex');
 

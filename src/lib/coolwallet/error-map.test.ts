@@ -6,8 +6,8 @@ import {
   DeviceNotFoundError,
   UnsupportedOperationError,
   UserRejectedError,
-} from '@/lib/hwsigner/errors';
-import { getCoolWalletErrorMessage, mapCoolWalletError } from '@/lib/coolwallet/error-map';
+} from '../hwsigner/errors';
+import { getCoolWalletErrorMessage, mapCoolWalletError } from './error-map';
 
 describe('CoolWallet error mapping', () => {
   it('maps chooser cancellations into UserRejectedError', () => {

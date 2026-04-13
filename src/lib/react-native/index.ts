@@ -1,15 +1,15 @@
-export { createReactNativeHWSigner } from '@/lib/react-native/create-signer';
+export { createReactNativeHWSigner } from './create-signer';
 export {
   getReactNativeWalletSupport,
   reactNativeWalletSupport,
   type ReactNativeWalletSupport,
   type ReactNativeWalletSupportStatus,
-} from '@/lib/react-native/support';
+} from './support';
 export type {
   ReactNativePublicKeyLike,
   ReactNativeSolanaWalletClient,
   ReactNativeWalletSignature,
-} from '@/lib/react-native/walletconnect-types';
+} from './walletconnect-types';
 export type {
   CreateHWSignerOptions,
   GetAccountsInput,
@@ -26,4 +26,4 @@ export type {
   SignedMessageResult,
   SignedTransactionResult,
   WalletAdapter,
-} from '@/lib/hwsigner/types';
+} from '../hwsigner/types';

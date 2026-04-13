@@ -7,16 +7,16 @@ import { Transaction, VersionedTransaction } from '@solana/web3.js';
 import {
   getSolanaDerivationPaths,
   resolveDerivationPath,
-} from '@/lib/hwsigner/derivation';
+} from '../hwsigner/derivation';
 import {
   DeviceConnectionError,
   UnsupportedOperationError,
-} from '@/lib/hwsigner/errors';
-import { bytesToBase64, messageToDisplayText, normalizeMessageBytes, base64ToBytes } from '@/lib/hwsigner/message';
+} from '../hwsigner/errors';
+import { bytesToBase64, messageToDisplayText, normalizeMessageBytes, base64ToBytes } from '../hwsigner/message';
 import {
   buildSignedLegacyResult,
   buildSignedVersionedResult,
-} from '@/lib/hwsigner/transactions';
+} from '../hwsigner/transactions';
 import type {
   GetAccountsInput,
   HWSignerAppConfiguration,
@@ -27,8 +27,8 @@ import type {
   SignedTransactionResult,
   SignTransactionInput,
   SignVersionedTransactionInput,
-} from '@/lib/hwsigner/types';
-import { getSecuXErrorMessage, mapSecuXError } from '@/lib/secux/error-map';
+} from '../hwsigner/types';
+import { getSecuXErrorMessage, mapSecuXError } from './error-map';
 
 type SecuXTransportModule = typeof import('@secux/transport-webusb');
 type SecuXSolanaModule = typeof import('@secux/app-sol');

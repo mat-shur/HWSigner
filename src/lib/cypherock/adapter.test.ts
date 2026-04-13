@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { createCypherockAdapter } from '@/lib/cypherock/adapter';
+import { UnsupportedOperationError } from '../hwsigner/errors';
+import { createCypherockAdapter } from './adapter';
 
 describe('Cypherock adapter', () => {
   it('exposes the expected capability shape for webusb', () => {

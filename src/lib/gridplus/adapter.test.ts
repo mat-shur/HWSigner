@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
 
-import { UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { createGridPlusAdapter } from '@/lib/gridplus/adapter';
-import { getGridPlusErrorMessage, mapGridPlusError } from '@/lib/gridplus/error-map';
+import { UnsupportedOperationError } from '../hwsigner/errors';
+import { createGridPlusAdapter } from './adapter';
+import { getGridPlusErrorMessage, mapGridPlusError } from './error-map';
 
 describe('GridPlus Lattice1 adapter', () => {
   it('exposes the expected capability shape for the NuFi provider runtime', () => {

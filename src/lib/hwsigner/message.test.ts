@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { base64ToBytes, bytesToBase64, messageToDisplayText, normalizeMessageBytes } from '@/lib/hwsigner/message';
+import { base64ToBytes, bytesToBase64, messageToDisplayText, normalizeMessageBytes } from './message';
 
 describe('message helpers', () => {
   it('normalizes string messages into bytes', () => {

@@ -1,23 +1,23 @@
 'use client';
 
-import { UnknownWalletError } from '@/lib/hwsigner/errors';
-import type { CreateHWSignerOptions, WalletAdapter } from '@/lib/hwsigner/types';
-import { createArculusAdapter } from '@/lib/arculus/adapter';
-import { createBcVaultAdapter } from '@/lib/bc-vault/adapter';
-import { createCoolWalletAdapter } from '@/lib/coolwallet/adapter';
-import { createCypherockAdapter } from '@/lib/cypherock/adapter';
-import { createDcentAdapter } from '@/lib/dcent/adapter';
-import { createEllipalAdapter } from '@/lib/ellipal/adapter';
-import { createGridPlusAdapter } from '@/lib/gridplus/adapter';
-import { createKeyPalAdapter } from '@/lib/keypal/adapter';
-import { createKeystoneAdapter } from '@/lib/keystone/adapter';
-import { createLedgerAdapter } from '@/lib/ledger/adapter';
-import { createOneKeyAdapter } from '@/lib/onekey/adapter';
-import { createSafePalAdapter } from '@/lib/safepal/adapter';
-import { createSecuXAdapter } from '@/lib/secux/adapter';
-import { createSolflareShieldAdapter } from '@/lib/solflare-shield/adapter';
-import { createTangemAdapter } from '@/lib/tangem/adapter';
-import { createTrezorAdapter } from '@/lib/trezor/adapter';
+import { UnknownWalletError } from './errors';
+import type { CreateHWSignerOptions, WalletAdapter } from './types';
+import { createArculusAdapter } from '../arculus/adapter';
+import { createBcVaultAdapter } from '../bc-vault/adapter';
+import { createCoolWalletAdapter } from '../coolwallet/adapter';
+import { createCypherockAdapter } from '../cypherock/adapter';
+import { createDcentAdapter } from '../dcent/adapter';
+import { createEllipalAdapter } from '../ellipal/adapter';
+import { createGridPlusAdapter } from '../gridplus/adapter';
+import { createKeyPalAdapter } from '../keypal/adapter';
+import { createKeystoneAdapter } from '../keystone/adapter';
+import { createLedgerAdapter } from '../ledger/adapter';
+import { createOneKeyAdapter } from '../onekey/adapter';
+import { createSafePalAdapter } from '../safepal/adapter';
+import { createSecuXAdapter } from '../secux/adapter';
+import { createSolflareShieldAdapter } from '../solflare-shield/adapter';
+import { createTangemAdapter } from '../tangem/adapter';
+import { createTrezorAdapter } from '../trezor/adapter';
 
 export function createHWSigner(options: CreateHWSignerOptions): WalletAdapter {
   switch (options.walletId) {

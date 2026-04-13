@@ -2,7 +2,7 @@ import { randomUUID } from 'node:crypto';
 
 import type { DeviceManagementKit, DeviceSessionId } from '@ledgerhq/device-management-kit';
 
-import { DeviceConnectionError } from '@/lib/hwsigner/errors';
+import { DeviceConnectionError } from '../hwsigner/errors';
 
 export interface SpeculosSession {
   token: string;

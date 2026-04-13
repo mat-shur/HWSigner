@@ -3,9 +3,9 @@
 import bs58 from 'bs58';
 import { Transaction } from '@solana/web3.js';
 
-import { DeviceConnectionError, UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { bytesToBase64, messageToDisplayText, normalizeMessageBytes } from '@/lib/hwsigner/message';
-import { buildSignedLegacyResult } from '@/lib/hwsigner/transactions';
+import { DeviceConnectionError, UnsupportedOperationError } from '../hwsigner/errors';
+import { bytesToBase64, messageToDisplayText, normalizeMessageBytes } from '../hwsigner/message';
+import { buildSignedLegacyResult } from '../hwsigner/transactions';
 import type {
   GetAccountsInput,
   HWSignerAppConfiguration,
@@ -16,8 +16,8 @@ import type {
   SignedTransactionResult,
   SignTransactionInput,
   SignVersionedTransactionInput,
-} from '@/lib/hwsigner/types';
-import { mapKeyPalError } from '@/lib/keypal/error-map';
+} from '../hwsigner/types';
+import { mapKeyPalError } from './error-map';
 
 const KEYPAL_ACCOUNT_PATH = 'keypal://tokenpocket-selected-account';
 

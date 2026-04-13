@@ -1,17 +1,17 @@
 import { PublicKey } from '@solana/web3.js';
 import { describe, expect, it, vi } from 'vitest';
 
-import { AdapterInitializationError, UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { createPlaygroundTransaction } from '@/lib/hwsigner/transactions';
-import { createTangemAdapter } from '@/lib/tangem/adapter';
+import { AdapterInitializationError, UnsupportedOperationError } from '../hwsigner/errors';
+import { createPlaygroundTransaction } from '../hwsigner/transactions';
+import { createTangemAdapter } from './adapter';
 import {
   bytesToHex,
   extractTangemCardSession,
   extractTangemSignature,
   normalizeTangemSolanaPublicKey,
   TANGEM_SOLANA_DERIVATION_PATH,
-} from '@/lib/tangem/client';
-import type { TangemReactNativeSdk } from '@/lib/tangem/types';
+} from './client';
+import type { TangemReactNativeSdk } from './types';
 
 const publicKeyBytes = Uint8Array.from(Array.from({ length: 32 }, (_, index) => index + 1));
 const publicKeyHex = bytesToHex(publicKeyBytes);

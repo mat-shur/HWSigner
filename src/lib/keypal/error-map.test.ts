@@ -6,8 +6,8 @@ import {
   DeviceNotFoundError,
   UnsupportedOperationError,
   UserRejectedError,
-} from '@/lib/hwsigner/errors';
-import { getKeyPalErrorMessage, mapKeyPalError } from '@/lib/keypal/error-map';
+} from '../hwsigner/errors';
+import { getKeyPalErrorMessage, mapKeyPalError } from './error-map';
 
 describe('KeyPal error mapping', () => {
   it('maps user rejection into UserRejectedError', () => {

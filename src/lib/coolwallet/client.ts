@@ -8,20 +8,20 @@ import {
   getSolanaDerivationPaths,
   parseSolanaDerivationPath,
   resolveDerivationPath,
-} from '@/lib/hwsigner/derivation';
+} from '../hwsigner/derivation';
 import {
   AdapterInitializationError,
   DeviceConnectionError,
   InvalidTransactionError,
   UnsupportedOperationError,
   UserRejectedError,
-} from '@/lib/hwsigner/errors';
-import { bytesToBase64, messageToDisplayText, normalizeMessageBytes } from '@/lib/hwsigner/message';
+} from '../hwsigner/errors';
+import { bytesToBase64, messageToDisplayText, normalizeMessageBytes } from '../hwsigner/message';
 import {
   assertTransactionHasFeePayer,
   buildSignedLegacyResult,
   buildSignedVersionedResult,
-} from '@/lib/hwsigner/transactions';
+} from '../hwsigner/transactions';
 import type {
   GetAccountsInput,
   HWSignerAppConfiguration,
@@ -32,8 +32,8 @@ import type {
   SignedTransactionResult,
   SignTransactionInput,
   SignVersionedTransactionInput,
-} from '@/lib/hwsigner/types';
-import { getCoolWalletErrorMessage, mapCoolWalletError } from '@/lib/coolwallet/error-map';
+} from '../hwsigner/types';
+import { getCoolWalletErrorMessage, mapCoolWalletError } from './error-map';
 
 const COOLWALLET_APP_NAME = 'HWSigner';
 const COOLWALLET_STORAGE_PREFIX = 'hwsigner:coolwallet:registration:';

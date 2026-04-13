@@ -19,15 +19,16 @@ The important part is the SDK shape: one API, typed capabilities, honest runtime
 
 ## Current Project Status
 
-This project is package-first, but the package is not published yet.
+This project is package-first. The package is not published to npm yet, but the repository now has
+publish-oriented metadata, package exports, and a TypeScript package build.
 
-`package.json` is still marked:
+Available package entrypoints:
 
-```json
-{
-  "private": true
-}
-```
+| Entrypoint | Purpose |
+|---|---|
+| `hwsigner` | Browser/web adapter factory and public SDK types. |
+| `hwsigner/core` | Pure utility exports for derivation paths, message helpers, transaction helpers, and errors. |
+| `hwsigner/react-native` | React Native adapter factory and injected-client types. |
 
 Support labels used throughout the repo:
 
@@ -155,7 +156,13 @@ Build:
 npm run build
 ```
 
-Optional Ledger Speculos smoke path (coz i tested in that emulator):
+Build the npm package output:
+
+```bash
+npm run package:build
+```
+
+Optional Ledger Speculos smoke path:
 
 ```bash
 npm run smoke:ledger:speculos
@@ -174,7 +181,7 @@ The smoke script expects a local Speculos instance and is not part of the normal
 
 ```ts
 import { Connection, PublicKey, SystemProgram, Transaction } from '@solana/web3.js';
-import { createHWSigner } from '@/lib/hwsigner/create-signer';
+import { createHWSigner } from 'hwsigner';
 
 const signer = createHWSigner({
   walletId: 'ledger',
@@ -217,7 +224,7 @@ console.log(signed.signature);
 React Native uses a separate entrypoint so mobile apps do not import browser-only WebHID, WebUSB, or Web Bluetooth paths.
 
 ```ts
-import { createReactNativeHWSigner } from '@/lib/react-native';
+import { createReactNativeHWSigner } from 'hwsigner/react-native';
 ```
 
 ### Tangem NFC
@@ -225,7 +232,7 @@ import { createReactNativeHWSigner } from '@/lib/react-native';
 Tangem is the most concrete native path in the repo. The app owns the NFC session by injecting a Tangem React Native SDK object.
 
 ```ts
-import { createReactNativeHWSigner } from '@/lib/react-native';
+import { createReactNativeHWSigner } from 'hwsigner/react-native';
 import RNTangemSdk from 'tangem-sdk-react-native';
 
 const signer = createReactNativeHWSigner({
@@ -250,7 +257,7 @@ Keystone needs a native camera/UR flow. HWSigner does not fake that scanner; it 
 import {
   createReactNativeHWSigner,
   type ReactNativeSolanaWalletClient,
-} from '@/lib/react-native';
+} from 'hwsigner/react-native';
 
 declare const wallet: ReactNativeSolanaWalletClient;
 
@@ -273,7 +280,7 @@ D'CENT, ELLIPAL, Arculus, BC Vault, Tangem, and Solflare Shield can use the gene
 import {
   createReactNativeHWSigner,
   type ReactNativeSolanaWalletClient,
-} from '@/lib/react-native';
+} from 'hwsigner/react-native';
 
 declare const wallet: ReactNativeSolanaWalletClient;
 
@@ -502,10 +509,19 @@ interface SignedTransactionResult {
 ```bash
 npm test
 npm run build
+npm run package:build
 npm run smoke:ledger:speculos
 ```
 
 `smoke:ledger:speculos` is opt-in and expects a running local Speculos instance. The normal test suite does not require hardware.
+
+Example projects and scripts:
+
+| Path | Purpose |
+|---|---|
+| `examples/react-native-demo` | Minimal Expo-style demo for the React Native entrypoint. It expects real injected Tangem, Keystone, or WalletConnect clients. |
+| `examples/node/build-transfer.mjs` | Programmatic transaction-building example using `hwsigner/core` after `npm run package:build`. |
+| `examples/node/speculos-sign-message.mjs` | Local Speculos bridge script that talks to the Next route handlers. |
 
 Current test coverage includes:
 
@@ -553,4 +569,4 @@ This is a dependency fallback warning. It is noisy, but the current repo still p
 
 ### Is this already published to npm?
 
-No. The SDK shape is here, but publish metadata is not finalized yet. The next step is to add package exports, build output, `files` when ready.
+No. The repo is ready-to-publish as a draft package: `package.json` now has public metadata, `exports`, `files`, and `prepack`. Run `npm run package:build` before `npm pack` or `npm publish`.

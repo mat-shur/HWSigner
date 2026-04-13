@@ -1,8 +1,8 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { createPlaygroundTransaction } from '@/lib/hwsigner/transactions';
-import type { HWSignerConnection } from '@/lib/hwsigner/types';
-import { createLedgerAdapter } from '@/lib/ledger/adapter';
+import { createPlaygroundTransaction } from '../hwsigner/transactions';
+import type { HWSignerConnection } from '../hwsigner/types';
+import { createLedgerAdapter } from './adapter';
 
 const CONNECTED_SPECULOS_RESPONSE: HWSignerConnection = {
   walletId: 'ledger',

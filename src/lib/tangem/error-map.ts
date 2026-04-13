@@ -5,7 +5,7 @@ import {
   TimeoutError,
   UnsupportedOperationError,
   UserRejectedError,
-} from '@/lib/hwsigner/errors';
+} from '../hwsigner/errors';
 
 export function mapTangemError(error: unknown): Error {
   const message = getTangemErrorMessage(error);

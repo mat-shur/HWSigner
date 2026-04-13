@@ -9,21 +9,21 @@ import { SignMessageVersion, SignerSolanaBuilder } from '@ledgerhq/device-signer
 import { speculosIdentifier, speculosTransportFactory } from '@ledgerhq/device-transport-kit-speculos';
 import { firstValueFrom, timeout } from 'rxjs';
 
-import { getLedgerCapabilities } from '@/lib/hwsigner/capabilities';
-import { getSolanaDerivationPaths, resolveDerivationPath, toLedgerDerivationPath } from '@/lib/hwsigner/derivation';
+import { getLedgerCapabilities } from '../hwsigner/capabilities';
+import { getSolanaDerivationPaths, resolveDerivationPath, toLedgerDerivationPath } from '../hwsigner/derivation';
 import {
   AdapterInitializationError,
   InvalidTransactionError,
   UnsupportedOperationError,
   getErrorMessage,
-} from '@/lib/hwsigner/errors';
-import { bytesToBase64, messageToDisplayText, normalizeMessageBytes } from '@/lib/hwsigner/message';
+} from '../hwsigner/errors';
+import { bytesToBase64, messageToDisplayText, normalizeMessageBytes } from '../hwsigner/message';
 import {
   buildSignedLegacyResult,
   buildSignedVersionedResult,
   resolveLedgerTransactionSigningPayload,
   serializeTransactionForLedger,
-} from '@/lib/hwsigner/transactions';
+} from '../hwsigner/transactions';
 import type {
   GetAccountsInput,
   HWSignerAccount,
@@ -35,10 +35,10 @@ import type {
   SignTransactionInput,
   SignVersionedTransactionInput,
   TransactionSigningPayloadMode,
-} from '@/lib/hwsigner/types';
-import { resolveLedgerDeviceAction } from '@/lib/ledger/action';
-import { DEFAULT_SPECULOS_API_BASE_URL, isSpeculosEnabled, resolveSpeculosUrl } from '@/lib/ledger/env';
-import { deleteSpeculosSession, requireSpeculosSession, saveSpeculosSession } from '@/lib/ledger/session-store';
+} from '../hwsigner/types';
+import { resolveLedgerDeviceAction } from './action';
+import { DEFAULT_SPECULOS_API_BASE_URL, isSpeculosEnabled, resolveSpeculosUrl } from './env';
+import { deleteSpeculosSession, requireSpeculosSession, saveSpeculosSession } from './session-store';
 
 const SPECULOS_DISCOVERY_TIMEOUT_MS = 5_000;
 

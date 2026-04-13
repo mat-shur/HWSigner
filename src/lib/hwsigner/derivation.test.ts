@@ -7,8 +7,8 @@ import {
   getSolanaDerivationPaths,
   parseSolanaDerivationPath,
   toLedgerDerivationPath,
-} from '@/lib/hwsigner/derivation';
-import { InvalidDerivationPathError } from '@/lib/hwsigner/errors';
+} from './derivation';
+import { InvalidDerivationPathError } from './errors';
 
 describe('derivation helpers', () => {
   it('formats the standard Ledger Solana derivation path', () => {

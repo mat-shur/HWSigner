@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { getErrorCode, getErrorMessage, getErrorTag } from '@/lib/hwsigner/errors';
+import { getErrorCode, getErrorMessage, getErrorTag } from './errors';
 
 describe('error helpers', () => {
   it('extracts nested originalError messages', () => {

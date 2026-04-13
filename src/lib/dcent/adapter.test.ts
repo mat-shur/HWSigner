@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { UnsupportedOperationError } from '@/lib/hwsigner/errors';
-import { createDcentAdapter } from '@/lib/dcent/adapter';
+import { UnsupportedOperationError } from '../hwsigner/errors';
+import { createDcentAdapter } from './adapter';
 
 describe("D'CENT adapter", () => {
   it('exposes the expected capability shape for walletconnect qr', () => {

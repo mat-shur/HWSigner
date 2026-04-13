@@ -1,4 +1,4 @@
-import type { HWSignerCapabilities, HWSignerRuntime } from '@/lib/hwsigner/types';
+import type { HWSignerCapabilities, HWSignerRuntime } from './types';
 
 export function getLedgerCapabilities(runtime: HWSignerRuntime): HWSignerCapabilities {
   return {

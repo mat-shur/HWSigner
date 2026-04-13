@@ -3,7 +3,7 @@ import { generateKeyPairSync, sign } from 'node:crypto';
 import bs58 from 'bs58';
 import { describe, expect, it } from 'vitest';
 
-import { verifyDetachedSignature } from '@/lib/hwsigner/signatures';
+import { verifyDetachedSignature } from './signatures';
 
 const SPKI_PREFIX_LENGTH = Buffer.from('302a300506032b6570032100', 'hex').length;
 
